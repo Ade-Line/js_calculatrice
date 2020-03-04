@@ -16,7 +16,7 @@ class Calculator {
 
     }
 
-    appendNumber(number) {        
+    appendNumber(number) {     
         if (number === '.' && this.currentOperand.includes('.')) return
         this.currentOperand = this.currentOperand.toString() + number.toString()
     }
@@ -89,12 +89,12 @@ class Calculator {
 
 
 const numberButtons = document.querySelectorAll('[date-number]')
-,     operationButtons = document.querySelectorAll('[data-operation]')
-,     equalsButton = document.querySelector('[data-equals]')
-,     deleteButton = document.querySelector('[data-delete]')
-,     allclearButton = document.querySelector('[data-all-clear]')
-,     previousOperandTextElement = document.querySelector('[data-previous-operand]')
-,     currentOperandTextElement = document.querySelector('[data-current-operand]');
+const operationButtons = document.querySelectorAll('[data-operation]')
+const equalsButton = document.querySelector('[data-equals]')
+const deleteButton = document.querySelector('[data-delete]')
+const allClearButton = document.querySelector('[data-all-clear]')
+const previousOperandTextElement = document.querySelector('[data-previous-operand]')
+const currentOperandTextElement = document.querySelector('[data-current-operand]')
 
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
@@ -112,7 +112,6 @@ operationButtons.forEach(button => {
         calculator.updateDisplay()
     })
 })
-
 
 equalsButton.addEventListener('click', button => {
     calculator.compute()
