@@ -36,7 +36,7 @@ class Calculator {
         const prev = parseFloat(this.previousOperand)
         const current = parseFloat(this.currentOperand)
         if (isNaN(prev) || isNaN(current)) return
-        switch (this.operation){
+        switch (this.operation) {
             case '+':
                 computation = prev + current
                 break
@@ -63,10 +63,9 @@ class Calculator {
         const decimalDigits = stringNumber.split('.')[1]
         let integerDisplay
         if (isNaN(integerDigits)) {
-            integerDigits = ''
+            integerDisplay = ''
         } else {
-            integerDisplay = integerDigits.toLocaleString('en', {
-                maximumFractionDigits: 0 })
+            integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 })
         }
         if (decimalDigits != null) {
             return `${integerDisplay}.${decimalDigits}`                           
@@ -81,14 +80,14 @@ class Calculator {
         if (this.operation != null) {
             this.previousOperandTextElement.innerText = 
             `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
-        } else{
+        } else {
             this.previousOperandTextElement.innerText = ''
         }
     }
 }
 
 
-const numberButtons = document.querySelectorAll('[date-number]')
+const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
 const deleteButton = document.querySelector('[data-delete]')
